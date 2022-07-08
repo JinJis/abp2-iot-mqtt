@@ -1,15 +1,15 @@
 from django.conf import settings
+from django.urls import include, path
 from rest_framework.routers import DefaultRouter, SimpleRouter
-
-from mqtt_rest.users.api.views import UserViewSet
 
 if settings.DEBUG:
     router = DefaultRouter()
 else:
     router = SimpleRouter()
 
-router.register("users", UserViewSet)
-
-
 app_name = "api"
-urlpatterns = router.urls
+urlpatterns = [
+    path("users/", include("mqtt_rest.users.urls")),
+    path("mqtts/", include("mqtt_rest.mqtts.urls")),
+]
+urlpatterns += router.urls

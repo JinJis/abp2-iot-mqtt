@@ -78,8 +78,8 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "mqtt_rest.users",
-    # Your stuff: custom apps go here
+    "mqtt_rest.users.apps.UsersConfig",
+    "mqtt_rest.mqtts.apps.MqttsConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -99,9 +99,9 @@ AUTHENTICATION_BACKENDS = [
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-user-model
 AUTH_USER_MODEL = "users.User"
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-redirect-url
-LOGIN_REDIRECT_URL = "users:redirect"
+LOGIN_REDIRECT_URL = "/"
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-url
-LOGIN_URL = "account_login"
+LOGIN_URL = "/"
 
 # PASSWORDS
 # ------------------------------------------------------------------------------
@@ -255,7 +255,6 @@ LOGGING = {
     "root": {"level": "INFO", "handlers": ["console"]},
 }
 
-
 # django-allauth
 # ------------------------------------------------------------------------------
 ACCOUNT_ALLOW_REGISTRATION = env.bool("DJANGO_ACCOUNT_ALLOW_REGISTRATION", True)
@@ -292,8 +291,8 @@ CORS_URLS_REGEX = r"^/api/.*$"
 # By Default swagger ui is available only to admin user(s). You can change permission classes to change that
 # See more configuration options at https://drf-spectacular.readthedocs.io/en/latest/settings.html#settings
 SPECTACULAR_SETTINGS = {
-    "TITLE": "mqtt-rest API",
-    "DESCRIPTION": "Documentation of API endpoints of mqtt-rest",
+    "TITLE": "mqtts-rest API",
+    "DESCRIPTION": "Documentation of API endpoints of mqtts-rest",
     "VERSION": "1.0.0",
     "SERVE_PERMISSIONS": ["rest_framework.permissions.IsAdminUser"],
     "SERVERS": [
