@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=mqtt_rest
+POSTGRES_USER=BHIXkQyeFAwHxXgFZkXRWmgnlELWSIRp
+POSTGRES_PASSWORD=NkIjmH9W55BRmCpFJ40ZYz7YBSXksWQjW3uIwBQ0I8V22OxwORZLjMCmLaKqGIJQ
