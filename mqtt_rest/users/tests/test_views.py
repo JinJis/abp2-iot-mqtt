@@ -11,11 +11,7 @@ from django.urls import reverse
 from mqtt_rest.users.forms import UserAdminChangeForm
 from mqtt_rest.users.models import User
 from mqtt_rest.users.tests.factories import UserFactory
-from mqtt_rest.users.views import (
-    UserRedirectView,
-    UserUpdateView,
-    user_detail_view,
-)
+from mqtt_rest.users.views import UserRedirectView, UserUpdateView, user_detail_view
 
 pytestmark = pytest.mark.django_db
 

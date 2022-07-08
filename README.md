@@ -64,7 +64,7 @@ The authentication can be activated if needed.
 To start the container, just :
 
 ```
-docker-compose -f broker.local.yaml up -d 
+docker-compose -f broker.local.yaml up -d
 ```
 
 The Mosquitto broker is now available on localhost. You can test it easily (require Mosquitto client):
